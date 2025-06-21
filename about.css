@@ -1,0 +1,24 @@
+.about {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21rem, auto));
+    align-items: center;
+    gap: 1.5em;
+    padding: 10px;
+}
+
+.about img {
+    max-width: 100%;
+}
+
+.about_text h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #017143;
+}
+
+.about_text p {
+    margin: 0.5em 0 1em;
+}
