@@ -6,13 +6,13 @@
   padding: 10px;
 }
 
-.customers h2 {
+.customers__title {
   text-align: center;
   font-size: 1.6em;
   font-weight: 600;
 }
 
-.customers_container {
+.customers__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, auto));
   align-items: center;
@@ -20,45 +20,42 @@
   margin-top: 2em;
 }
 
-.customers_container .box {
+.customers__item {
   padding: 20px;
   box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%);
   border-radius: 0.5em;
   border-bottom: 7px solid #85e385;
-}
-
-.customers_container .box:hover {
-  transform: translate(10px);
   transition: 0.2s all linear;
 }
 
-.customers_container .box .fa-quote-left {
+.customers__item:hover {
+  transform: translate(10px);
+}
+
+.customers__quote-icon {
   font-size: 24px;
   color: #85e385;
 }
 
-.customers_container .box .fa-star {
+.customers__rating .fa-star,
+.customers__rating .fa-star-half-stroke {
   font-size: 1em;
   color: orange;
 }
 
-.customers_container .box .fa-star-half-stroke {
-  font-size: 1em;
-  color: orange;
-}
-
-.customers_container .box p {
+.customers__text {
   font-size: 0.938em;
+  margin-top: 1em;
 }
 
-.review-profile {
+.customers__profile {
   display: flex;
   align-items: center;
   margin-top: 1em;
   column-gap: 0.5em;
 }
 
-.review-profile img {
+.customers__profile-img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -66,7 +63,7 @@
   object-position: center;
 }
 
-.review-profile {
+.customers__profile-name {
   font-size: 0.938em;
   font-weight: 600;
 }

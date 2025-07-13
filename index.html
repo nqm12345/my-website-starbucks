@@ -3,468 +3,592 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="category.css" />
-    <link rel="stylesheet" href="product.css" />
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="new_product.css">
-    <link rel="stylesheet" href="customers.css" />
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/category.css" />
+    <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/new_product.css">
+    <link rel="stylesheet" href="/css/customers.css" />
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <!-- Thêm vào trong <head> -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- SweetAlert2 CSS + JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <title>Document</title>
   </head>
   <body>
-    <section id="home">
-      <div class="circle"></div>
-      <header  id="main-header">
-        <a href="#">
-          <img src="images/logo.png" class="logo" alt="" />
-        </a>
+<section class="home" id="home">
+  <div class="home__circle"></div>
 
-        <!-- Icon mở menu -->
-        <div class="menu-toggle" onclick="openMenu()">☰</div>
+  <header class="header" id="main-header">
+    <a href="#" class="header__logo-link">
+      <img src="images/logo.png" class="header__logo" alt="" />
+    </a>
 
-        <!-- Thanh nav chính -->
-        <ul class="nav">
-          <!-- Icon đóng menu trong nav -->
-          <div class="close-toggle" onclick="closeMenu()">✖</div>
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#categories">Danh mục</a></li>
-          <li><a href="#products">Sản phẩm</a></li>
-          <li><a href="#app">Ứng dụng</a></li>
-          <li><a href="#about">Về chúng tôi</a></li>
-          <li><a href="#news">Có gì mới</a></li>
-          <li><a href="#">Liên hệ</a></li>
-        </ul>
-      </header>
+    <div class="header__menu-toggle" onclick="openMenu()">☰</div>
 
-      <div class="content">
-        <div class="textBox">
-          <h2>
-            ☕ Hương vị cà phê đỉnh cao <br />
-            <span>Starbucks</span>
-          </h2>
-          <p>
-            Mỗi ly cà phê Starbucks là sự hòa quyện hoàn hảo giữa hạt Arabica
-            thượng hạng và công thức rang xay tinh tế, mang đến hương thơm quyến
-            rũ, vị đậm đà và hậu vị mượt mà đầy lôi cuốn.
-          </p>
-          <a href="#">Tìm hiểu thêm</a>
-        </div>
-        <div class="imgBox">
-          <img src="images/img1.png" class="starbucks" alt="" />
-        </div>
-      </div>
-      <ul class="thumb">
-        <li>
-          <img
-            src="images/thumb1.png"
-            onclick="imgSlider('images/img1.png'); changeCircleColor('#017143')"
-          />
-        </li>
-        <li>
-          <img
-            src="images/thumb2.png"
-            onclick="imgSlider('images/img2.png'); changeCircleColor('#eb7495')"
-          />
-        </li>
-        <li>
-          <img
-            src="images/thumb3.png"
-            onclick="imgSlider('images/img3.png'); changeCircleColor('#d752b1')"
-          />
-        </li>
-      </ul>
-      <ul class="sci">
-        <li>
-          <a href="#"><img src="images/facebook.png" alt="" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="images/twitter.png" alt="" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="images/instagram.png" alt="" /></a>
-        </li>
-      </ul>
-    </section>
+    <ul class="header__nav">
+      <div class="header__close-toggle" onclick="closeMenu()">✖</div>
+      <li class="header__nav-item"><a href="#home" class="header__nav-link">Trang chủ</a></li>
+      <li class="header__nav-item"><a href="#categories" class="header__nav-link">Danh mục</a></li>
+      <li class="header__nav-item"><a href="#products" class="header__nav-link">Sản phẩm</a></li>
+      <li class="header__nav-item"><a href="#app" class="header__nav-link">Ứng dụng</a></li>
+      <li class="header__nav-item"><a href="#about" class="header__nav-link">Về chúng tôi</a></li>
+      <li class="header__nav-item"><a href="#news" class="header__nav-link">Có gì mới</a></li>
+      <li class="header__nav-item"><a href="#" class="header__nav-link">Liên hệ</a></li>
+    </ul>
+  </header>
 
-    
+  <div class="home__content">
+    <div class="home__text-box">
+      <h2 class="home__heading">
+        ☕ Hương vị cà phê đỉnh cao <br />
+        <span class="home__brand">Starbucks</span>
+      </h2>
+      <p class="home__description">
+        Mỗi ly cà phê Starbucks là sự hòa quyện hoàn hảo giữa hạt Arabica
+        thượng hạng và công thức rang xay tinh tế...
+      </p>
+      <a href="#" class="home__btn">Tìm hiểu thêm</a>
+    </div>
+
+    <div class="home__img-box">
+      <img src="images/img1.png" class="home__img" alt="" />
+    </div>
+  </div>
+
+  <ul class="home__thumbs">
+    <li class="home__thumb">
+      <img src="images/thumb1.png" onclick="imgSlider('images/img1.png'); changeCircleColor('#017143')" />
+    </li>
+    <li class="home__thumb">
+      <img src="images/thumb2.png" onclick="imgSlider('images/img2.png'); changeCircleColor('#eb7495')" />
+    </li>
+    <li class="home__thumb">
+      <img src="images/thumb3.png" onclick="imgSlider('images/img3.png'); changeCircleColor('#d752b1')" />
+    </li>
+  </ul>
+
+  <ul class="home__socials">
+    <li><a href="#"><img src="images/facebook.png" alt="" /></a></li>
+    <li><a href="#"><img src="images/twitter.png" alt="" /></a></li>
+    <li><a href="#"><img src="images/instagram.png" alt="" /></a></li>
+  </ul>
+</section>
+
+
 <!-- categories -->
 
-    <div class="categories" id="categories">
-      <div class="heading">
-        <h1>
-          Danh mục đồ uống <br />
-          <span>Starbucks</span>
-        </h1>
-        <a href="#" class="btn_starbucks">Tìm hiểu thêm</a>
-      </div>
-      <div class="categories_container">
-        <div class="box box1">
-          <img src="images/img1.png" alt="" />
-          <h2>Fruits</h2>
-          <span>22 item</span>
-        </div>
-        <div class="box box2">
-          <img src="images/img2.png" alt="" />
-          <h2>Fruits</h2>
-          <span>22 item</span>
-        </div>
-        <div class="box box3">
-          <img src="images/img3.png" alt="" />
-          <h2>Fruits</h2>
-          <span>22 item</span>
-        </div>
-        <div class="box">
-          <img src="images/img1.png" alt="" />
-          <h2>Fruits</h2>
-          <span>22 item</span>
-        </div>
-        <div class="box">
-          <img src="images/img2.png" alt="" />
-          <h2>Fruits</h2>
-          <span>22 item</span>
-        </div>
-      </div>
+<div class="categories" id="categories" data-aos="fade-up">
+  <div class="categories__heading" data-aos="fade-down" data-aos-delay="100">
+    <h1 class="categories__title">
+      Danh mục đồ uống <br />
+      <span class="categories__brand">Starbucks</span>
+    </h1>
+    <a href="#" class="categories__btn" data-aos="zoom-in" data-aos-delay="300">Tìm hiểu thêm</a>
+  </div>
+
+  <div class="categories__container">
+    <div class="categories__item categories__item--1" data-aos="zoom-in" data-aos-delay="100">
+      <img src="images/img1.png" alt="" class="categories__img" />
+      <h2 class="categories__name">Fruits</h2>
+      <span class="categories__count">22 item</span>
     </div>
+    <div class="categories__item categories__item--2" data-aos="zoom-in" data-aos-delay="200">
+      <img src="images/img2.png" alt="" class="categories__img" />
+      <h2 class="categories__name">Fruits</h2>
+      <span class="categories__count">22 item</span>
+    </div>
+    <div class="categories__item categories__item--3" data-aos="zoom-in" data-aos-delay="300">
+      <img src="images/img3.png" alt="" class="categories__img" />
+      <h2 class="categories__name">Fruits</h2>
+      <span class="categories__count">22 item</span>
+    </div>
+    <div class="categories__item" data-aos="zoom-in" data-aos-delay="400">
+      <img src="images/img1.png" alt="" class="categories__img" />
+      <h2 class="categories__name">Fruits</h2>
+      <span class="categories__count">22 item</span>
+    </div>
+    <div class="categories__item" data-aos="zoom-in" data-aos-delay="500">
+      <img src="images/img2.png" alt="" class="categories__img" />
+      <h2 class="categories__name">Fruits</h2>
+      <span class="categories__count">22 item</span>
+    </div>
+  </div>
+</div>
+
 
 <!--products  -->
     
-    <div class="products" id="products">
-      <div class="heading">
-        <h1>
-          Sản phẩm đồ uống<br />
-          <span>Starbucks</span>
-        </h1>
-      </div>
-    
+<div class="products" id="products" data-aos="fade-up">
+  <div class="products__heading" data-aos="fade-down" data-aos-delay="100">
+    <h1 class="products__title">
+      Sản phẩm đồ uống<br />
+      <span class="products__brand">Starbucks</span>
+    </h1>
+  </div>
 
-      <div class="products-container">
-         <div class="box">
-            <div class="box-img">
-               <img src="images/img1.png" alt="">
-            </div>
-                <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <h2>Cà phê Starbucks vị matcha</h2>
-          <span>$ 12.4</span>
-          <a href="#" class="btn">Order now</a>
-         </div>
-           <div class="box">
-            <div class="box-img">
-               <img src="images/img2.png" alt="">
-            </div>
-                <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <h2>Cà phê Starbucks vị matcha</h2>
-          <span>$ 12.4</span>
-          <a href="#" class="btn">Order now</a>
-         </div>
-           <div class="box">
-            <div class="box-img">
-               <img src="images/img3.png" alt="">
-            </div>
-                <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <h2>Cà phê Starbucks vị matcha</h2>
-          <span>$ 12.4</span>
-          <a href="#" class="btn">Order now</a>
-         </div>
-           <div class="box">
-            <div class="box-img">
-               <img src="images/img4.png" alt="">
-            </div>
-                <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <h2>Cà phê Starbucks vị matcha</h2>
-          <span>$ 12.4</span>
-          <a href="#" class="btn">Order now</a>
-         </div>
-           <div class="box">
-            <div class="box-img">
-               <img src="images/img5.png" alt="">
-            </div>
-                <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <h2>Cà phê Starbucks vị matcha</h2>
-          <span>$ 12.4</span>
-          <a href="#" class="btn">Order now</a>
-         </div>
-           <div class="box">
-            <div class="box-img">
-               <img src="images/img6.png" alt="">
-            </div>
-                <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <h2>Cà phê Starbucks vị matcha</h2>
-          <span>$ 12.4</span>
-          <a href="#" class="btn">Order now</a>
-         </div>
+  <div class="products__container">
+    <div class="products__item" data-aos="zoom-in-up" data-aos-delay="100">
+      <div class="products__img-box">
+        <img src="images/img1.png" alt="" class="products__img" />
+      </div>
+      <div class="products__stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <h2 class="products__name">Cà phê Starbucks vị matcha</h2>
+      <span class="products__price">$ 12.4</span>
+      <a href="#" class="products__btn">Order now</a>
     </div>
+
+    <div class="products__item" data-aos="zoom-in-up" data-aos-delay="200">
+      <div class="products__img-box">
+        <img src="images/img2.png" alt="" class="products__img" />
+      </div>
+      <div class="products__stars">
+         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <h2 class="products__name">Cà phê Starbucks vị matcha</h2>
+      <span class="products__price">$ 12.4</span>
+      <a href="#" class="products__btn">Order now</a>
+    </div>
+
+    <div class="products__item" data-aos="zoom-in-up" data-aos-delay="300">
+      <div class="products__img-box">
+        <img src="images/img3.png" alt="" class="products__img" />
+      </div>
+      <div class="products__stars">
+         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <h2 class="products__name">Cà phê Starbucks vị matcha</h2>
+      <span class="products__price">$ 12.4</span>
+      <a href="#" class="products__btn">Order now</a>
+    </div>
+
+    <div class="products__item" data-aos="zoom-in-up" data-aos-delay="400">
+      <div class="products__img-box">
+        <img src="images/img4.png" alt="" class="products__img" />
+      </div>
+      <div class="products__stars">
+         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <h2 class="products__name">Cà phê Starbucks vị matcha</h2>
+      <span class="products__price">$ 12.4</span>
+      <a href="#" class="products__btn">Order now</a>
+    </div>
+
+    <div class="products__item" data-aos="zoom-in-up" data-aos-delay="500">
+      <div class="products__img-box">
+        <img src="images/img5.png" alt="" class="products__img" />
+      </div>
+      <div class="products__stars">
+         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <h2 class="products__name">Cà phê Starbucks vị matcha</h2>
+      <span class="products__price">$ 12.4</span>
+      <a href="#" class="products__btn">Order now</a>
+    </div>
+
+    <div class="products__item" data-aos="zoom-in-up" data-aos-delay="600">
+      <div class="products__img-box">
+        <img src="images/img6.png" alt="" class="products__img" />
+      </div>
+      <div class="products__stars"> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i></div>
+      <h2 class="products__name">Cà phê Starbucks vị matcha</h2>
+      <span class="products__price">$ 12.4</span>
+      <a href="#" class="products__btn">Order now</a>
+    </div>
+  </div>
 </div>
+
+
 
 <!-- app -->
 
-<div class="app" id="app">
-  <div class="app-heading">
-    <span>Ứng dụng của chúng tôi</span>
-    <h1>Tải ứng dụng</h1>
+<div class="app" id="app" data-aos="fade-up">
+  <div class="app__heading" data-aos="fade-down" data-aos-delay="100">
+    <span class="app__label">Ứng dụng của chúng tôi</span>
+    <h1 class="app__title">Tải ứng dụng</h1>
   </div>
-  <div class="container-app">
-    <div class="app-text">
-      <h2>Ứng dụng Starbucks – Trải nghiệm cà phê theo cách của bạn</h2>
-      <p>Tải ứng dụng Starbucks ngay hôm nay để đặt món nhanh chóng, tích điểm đổi quà, nhận ưu đãi độc quyền và khám phá trải nghiệm cà phê tiện lợi mọi lúc, mọi nơi!</p>
-      <p>👉 Có mặt trên App Store và Google Play.</p>
-       <a href="#"><i class="fa-solid fa-arrow-down"></i>Tải ứng dụng</a>
+
+  <div class="app__container">
+    <div class="app__content" data-aos="fade-right" data-aos-delay="200">
+      <h2 class="app__subtitle">Ứng dụng Starbucks – Trải nghiệm cà phê theo cách của bạn</h2>
+      <p class="app__text">
+        Tải ứng dụng Starbucks ngay hôm nay để đặt món nhanh chóng, tích điểm đổi quà, nhận ưu đãi độc quyền và khám phá trải nghiệm cà phê tiện lợi mọi lúc, mọi nơi!
+      </p>
+      <p class="app__text">👉 Có mặt trên App Store và Google Play.</p>
+      <a href="#" class="app__btn" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fa-solid fa-arrow-down"></i> Tải ứng dụng
+      </a>
     </div>
-    <div class="app-img">
-      <img src="images/app.png" alt="">
+
+    <div class="app__image-box" data-aos="fade-left" data-aos-delay="300">
+      <img src="images/app.png" alt="Ứng dụng Starbucks" class="app__image" />
     </div>
   </div>
 </div>
 
+
 <!-- about -->
-   <div class="app-heading">
-    <span>Về chúng tôi</span>
-    <h1>Starbucks</h1>
+<div class="app__heading" data-aos="fade-down" data-aos-delay="100">
+  <span class="app__label">Về chúng tôi</span>
+  <h1 class="app__title">Starbucks</h1>
+</div>
+
+<div class="about" id="about" data-aos="fade-up" data-aos-delay="200">
+  <img src="images/about_2.jpg" alt="" data-aos="zoom-in" data-aos-delay="300" />
+  
+  <div class="about_text" data-aos="fade-left" data-aos-delay="400">
+    <h2>☕ Giới thiệu về Starbucks – Chúng tôi là ai?</h2>
+    
+    <p data-aos="fade-up" data-aos-delay="500">
+      Tại Starbucks, chúng tôi không chỉ phục vụ cà phê – chúng tôi mang đến trải nghiệm. Từ những hạt cà phê Arabica chất lượng cao được chọn lọc kỹ lưỡng, đến không gian ấm cúng đầy cảm hứng, mỗi cửa hàng Starbucks là một điểm đến để thư giãn, kết nối và sáng tạo.
+    </p>
+    
+    <p data-aos="fade-up" data-aos-delay="600">
+      Chúng tôi tự hào là nơi mà mỗi ly cà phê đều được pha chế bằng cả tâm huyết và đam mê, đặt khách hàng làm trung tâm cho mọi điều chúng tôi làm. Starbucks không ngừng đổi mới, lan tỏa văn hóa cà phê hiện đại, và đồng hành cùng cộng đồng địa phương bằng các hoạt động ý nghĩa và bền vững.
+    </p>
+    
+    <p data-aos="fade-up" data-aos-delay="700">
+      Starbucks – Hơn cả một ly cà phê.
+    </p>
+    
+    <a href="#" class="btn_starbucks" data-aos="zoom-in" data-aos-delay="800">Tìm hiểu thêm</a>
   </div>
-    <div class="about" id="about">
-      <img src="images/about_2.jpg" alt="">
-      <div class="about_text">
-        <h2>☕ Giới thiệu về Starbucks – Chúng tôi là ai?</h2>
-        <p>Tại Starbucks, chúng tôi không chỉ phục vụ cà phê – chúng tôi mang đến trải nghiệm. Từ những hạt cà phê Arabica chất lượng cao được chọn lọc kỹ lưỡng, đến không gian ấm cúng đầy cảm hứng, mỗi cửa hàng Starbucks là một điểm đến để thư giãn, kết nối và sáng tạo.</p>
-        <p>Chúng tôi tự hào là nơi mà mỗi ly cà phê đều được pha chế bằng cả tâm huyết và đam mê, đặt khách hàng làm trung tâm cho mọi điều chúng tôi làm. Starbucks không ngừng đổi mới, lan tỏa văn hóa cà phê hiện đại, và đồng hành cùng cộng đồng địa phương bằng các hoạt động ý nghĩa và bền vững.</p>
-        <p>Starbucks – Hơn cả một ly cà phê.</p>
-         <a href="#" class="btn_starbucks">Tìm hiểu thêm</a>
-      </div>
-    </div>
+</div>
 
 
-  <div class="app-heading">
-    <span>Đồ uống sắp ra mắt</span>
-    <h1>Starbucks</h1>
+ <div class="app__heading">
+    <span class="app__label">Đồ uống sắp ra mắt</span>
+    <h1 class="app__title">Starbucks</h1>
   </div>
 
  <!-- slider -->
-    <div class="carousel" id="news">
-        <div class="list">
-            <div class="item active" 
+<div class="carousel" id="news">
+    <div class="carousel__list">
+        <div class="carousel__item carousel__item--active"
             style="
-            --img-src: url('images/item1.png');
+            --img-src: url('/images/item1.png');
             --bg-color: #333;
-            --title: 'SODA CON'
+            --title: 'SODA CON';
             ">
-                <div class="content">
-                    <div class="image"></div>
-                    <div class="info">
-                        <div class="title">
-                            Sắp ra mắt – Bộ ba soda hương vị mới lạ đầy sảng khoái!
-                        </div>
-                        <div class="category">
-                            🍃 Soda Kiwi – Tươi mát từng ngụm
-                        </div>
-                        <div class="des">
-                           Khơi dậy năng lượng với hương vị kiwi chua nhẹ, ngọt thanh, kết hợp cùng gas sủi bọt sảng khoái. Soda Kiwi mang đến cảm giác mát lạnh, đầy hứng khởi cho những ngày năng động. Thích hợp cho những ai yêu thích sự mới lạ và tươi trẻ!
-                        </div>
-                        <a href="">
-                            Xem Thêm
-                            <span>&#8594</span>
-                        </a>
+            <div class="carousel__content">
+                <div class="carousel__image"></div>
+                <div class="carousel__info">
+                    <div class="carousel__title">
+                        Sắp ra mắt – Bộ ba soda hương vị mới lạ đầy sảng khoái!
                     </div>
+                    <div class="carousel__category">
+                        🍃 Soda Kiwi – Tươi mát từng ngụm
+                    </div>
+                    <div class="carousel__description">
+                        Khơi dậy năng lượng với hương vị kiwi chua nhẹ, ngọt thanh, kết hợp cùng gas sủi bọt sảng khoái...
+                    </div>
+                    <a href="" class="carousel__link">
+                        Xem Thêm
+                        <span class="carousel__icon">&#8594</span>
+                    </a>
                 </div>
             </div>
-            <div class="item" 
+        </div>
+
+        <div class="carousel__item"
             style="
-            --img-src: url('images/item2.png');
+            --img-src: url('/images/item2.png');
             --bg-color: #036d27;
-            --title: 'STARBUCKS'
+            --title: 'STARBUCKS';
             ">
-                <div class="content">
-                    <div class="image"></div>
-                    <div class="info">
-                        <div class="title">
-                             Sắp ra mắt – Bộ ba soda hương vị mới lạ đầy sảng khoái!
-                        </div>
-                        <div class="category">
-                            🍵 Soda Trà Xanh – Thanh mát và thư giãn
-                        </div>
-                        <div class="des">
-                            Tinh chất trà xanh nhẹ nhàng hòa quyện cùng soda mát lạnh, tạo nên một thức uống vừa sảng khoái vừa tốt cho tinh thần. Soda Trà Xanh là lựa chọn hoàn hảo để giải tỏa căng thẳng, giúp bạn thư giãn giữa nhịp sống bận rộn.
-                        </div>
-                        <a href="">
-                            Xem Thêm
-                            <span>&#8594</span>
-                        </a>
+            <div class="carousel__content">
+                <div class="carousel__image"></div>
+                <div class="carousel__info">
+                    <div class="carousel__title">
+                        Sắp ra mắt – Bộ ba soda hương vị mới lạ đầy sảng khoái!
                     </div>
+                    <div class="carousel__category">
+                        🍵 Soda Trà Xanh – Thanh mát và thư giãn
+                    </div>
+                    <div class="carousel__description">
+                        Tinh chất trà xanh nhẹ nhàng hòa quyện cùng soda mát lạnh...
+                    </div>
+                    <a href="" class="carousel__link">
+                        Xem Thêm
+                        <span class="carousel__icon">&#8594</span>
+                    </a>
                 </div>
             </div>
-            <div class="item" 
+        </div>
+
+        <div class="carousel__item"
             style="
-            --img-src: url('images/item3.png');
+            --img-src: url('/images/item3.png');
             --bg-color: #e86c3f;
-            --title: 'SODA MEME'
+            --title: 'SODA MEME';
             ">
-                <div class="content">
-                    <div class="image"></div>
-                    <div class="info">
-                        <div class="title">
-                           Sắp ra mắt – Bộ ba soda hương vị mới lạ đầy sảng khoái!
-                        </div>
-                        <div class="category">
-                            🍊 Soda Cam – Sảng khoái vị cam tươi
-                        </div>
-                        <div class="des">
-                            Ngọt ngào, tươi mới và bùng nổ hương cam – Soda Cam mang đến trải nghiệm giải khát đầy sinh lực. Vị cam mọng nước kết hợp cùng độ chua nhẹ và gas tinh tế, giúp đánh thức mọi giác quan và lan tỏa sự tươi vui.
-                        </div>
-                        <a href="">
-                           Xem Thêm
-                            <span>&#8594</span>
-                        </a>
+            <div class="carousel__content">
+                <div class="carousel__image"></div>
+                <div class="carousel__info">
+                    <div class="carousel__title">
+                        Sắp ra mắt – Bộ ba soda hương vị mới lạ đầy sảng khoái!
                     </div>
+                    <div class="carousel__category">
+                        🍊 Soda Cam – Sảng khoái vị cam tươi
+                    </div>
+                    <div class="carousel__description">
+                        Ngọt ngào, tươi mới và bùng nổ hương cam – Soda Cam mang đến trải nghiệm giải khát đầy sinh lực...
+                    </div>
+                    <a href="" class="carousel__link">
+                        Xem Thêm
+                        <span class="carousel__icon">&#8594</span>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
-        </div>
-        <ul class="dots">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-        </ul>
     </div>
+
+    <div class="carousel__arrows">
+        <button class="carousel__arrow" id="prev">&lt;</button>
+        <button class="carousel__arrow" id="next">&gt;</button>
+    </div>
+
+    <ul class="carousel__dots">
+        <li class="carousel__dot carousel__dot--active"></li>
+        <li class="carousel__dot"></li>
+        <li class="carousel__dot"></li>
+    </ul>
+</div>
+
 
 <!-- customers -->
-    <div class="customers" id="customers">
-      <h2>Tại sao khách hàng yêu thích đồ uống của chúng tôi?</h2>
+<div class="customers" id="customers">
+  <h2 class="customers__title" data-aos="fade-down" data-aos-delay="100">
+    Tại sao khách hàng yêu thích đồ uống của chúng tôi?
+  </h2>
 
-      <div class="customers_container">
-        <div class="box">
-          <i class="fa-solid fa-quote-left"></i>
-          <div class="star">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <p>Starbucks luôn là lựa chọn hàng đầu của tôi mỗi sáng! Ly Caramel Macchiato không chỉ thơm ngon mà còn giúp tôi khởi đầu ngày mới tràn đầy năng lượng. Không gian quán cũng rất dễ chịu, làm việc hay thư giãn đều tuyệt vời!</p>
-          <div class="review-profile">
-            <img src="images/profile1.png" alt="">
-            <h3>Nguyễn Quang Minh</h3>
-          </div>
-        </div>
-        <div class="box">
-          <i class="fa-solid fa-quote-left"></i>
-          <div class="star">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <p>Không chỉ là đồ uống ngon mà Starbucks còn cho mình cảm giác như đang ở nhà. Mỗi lần gọi Cold Brew là như tiếp thêm năng lượng cho buổi chiều làm việc. Nhân viên cũng cực kỳ thân thiện và chuyên nghiệp!</p>
-          <div class="review-profile">
-            <img src="images/profile2.webp" alt="">
-            <h3>Hoàng Thị Ngọc Ánh</h3>
-          </div>
-        </div>
-        <div class="box">
-          <i class="fa-solid fa-quote-left"></i>
-          <div class="star">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star-half-stroke"></i>
-          </div>
-          <p>Mình nghiện Trà xanh đá xay ở Starbucks! Vị trà đậm đà nhưng vẫn rất mát lạnh, topping kem siêu mê luôn. Đã thử nhiều nơi nhưng vẫn quay lại Starbucks vì hương vị quá đặc trưng, một đồ uống tuyệt vời</p>
-          <div class="review-profile">
-            <img src="images/profile3.jpg" alt="">
-            <h3>Killua</h3>
-          </div>
-        </div>
+  <div class="customers__container">
+    <div class="customers__item" data-aos="fade-up" data-aos-delay="200">
+      <i class="customers__quote-icon fa-solid fa-quote-left"></i>
+      <div class="customers__rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
       </div>
-
+      <p class="customers__text">
+        Starbucks luôn là lựa chọn hàng đầu của tôi mỗi sáng! Ly Caramel Macchiato không chỉ thơm ngon mà còn giúp tôi khởi đầu ngày mới tràn đầy năng lượng. Không gian quán cũng rất dễ chịu, làm việc hay thư giãn đều tuyệt vời!
+      </p>
+      <div class="customers__profile">
+        <img src="images/profile1.png" alt="" class="customers__profile-img">
+        <h3 class="customers__profile-name">Nguyễn Quang Minh</h3>
+      </div>
     </div>
+
+    <div class="customers__item" data-aos="fade-up" data-aos-delay="300">
+      <i class="customers__quote-icon fa-solid fa-quote-left"></i>
+      <div class="customers__rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <p class="customers__text">
+        Không chỉ là đồ uống ngon mà Starbucks còn cho mình cảm giác như đang ở nhà. Mỗi lần gọi Cold Brew là như tiếp thêm năng lượng cho buổi chiều làm việc. Nhân viên cũng cực kỳ thân thiện và chuyên nghiệp!
+      </p>
+      <div class="customers__profile">
+        <img src="images/profile2.webp" alt="" class="customers__profile-img">
+        <h3 class="customers__profile-name">Hoàng Thị Ngọc Ánh</h3>
+      </div>
+    </div>
+
+    <div class="customers__item" data-aos="fade-up" data-aos-delay="400">
+      <i class="customers__quote-icon fa-solid fa-quote-left"></i>
+      <div class="customers__rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <p class="customers__text">
+        Mình nghiện Trà xanh đá xay ở Starbucks! Vị trà đậm đà nhưng vẫn rất mát lạnh, topping kem siêu mê luôn. Đã thử nhiều nơi nhưng vẫn quay lại Starbucks vì hương vị quá đặc trưng, một đồ uống tuyệt vời
+      </p>
+      <div class="customers__profile">
+        <img src="images/profile3.jpg" alt="" class="customers__profile-img">
+        <h3 class="customers__profile-name">Killua</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- customers -->
 
 <div class="footer" id="footer">
-  <div class="footer-box">
-    <a href="#" class="logo"><img src="images/logo.png" alt=""><span>Starbucks</span></a>
-    <p>Địa chỉ: Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
-    <div class="social">
-      <a href="#"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+  <div class="footer__box footer__box--brand">
+    <a href="#" class="footer__logo">
+      <img src="images/logo.png" alt="" class="footer__logo-img">
+      <span class="footer__logo-text">Starbucks</span>
+    </a>
+    <p class="footer__address">Địa chỉ: Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+    <div class="footer__social">
+      <a href="#" class="footer__social-link"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="footer__social-link"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="footer__social-link"><i class="fa-brands fa-youtube"></i></a>
     </div>
   </div>
-  <div class="footer-box">
-    <h2>Về chúng tôi</h2>
-    <a href="#">Giới thiệu</a>
-    <a href="#">Tuyển dụng</a>
-    <a href="#">Liên hệ</a>
+
+  <div class="footer__box footer__box--about">
+    <h2 class="footer__heading">Về chúng tôi</h2>
+    <a href="#" class="footer__link">Giới thiệu</a>
+    <a href="#" class="footer__link">Tuyển dụng</a>
+    <a href="#" class="footer__link">Liên hệ</a>
   </div>
-   <div class="footer-box">
-    <h2>Hỗ trợ khách hàng</h2>
-    <a href="#">Câu hỏi thường gặp</a>
-    <a href="#">Chính sách đổi trả</a>
-    <a href="#">Hướng dẫn đặt hàng</a>
+
+  <div class="footer__box footer__box--support">
+    <h2 class="footer__heading">Hỗ trợ khách hàng</h2>
+    <a href="#" class="footer__link">Câu hỏi thường gặp</a>
+    <a href="#" class="footer__link">Chính sách đổi trả</a>
+    <a href="#" class="footer__link">Hướng dẫn đặt hàng</a>
   </div>
-     <div class="footer-box">
-    <h2>Gửi email tới chúng tôi</h2>
-    <p>Nhận giảm giá 10% với <br>email của bạn</p>
-    <form action="">
-      <i class="fa-solid fa-envelope"></i>
-      <input type="email" name="" id="" placeholder="Nhập email của bạn vào đây">
-      <i class="fa-solid fa-arrow-right"></i>
+
+  <div class="footer__box footer__box--email">
+    <h2 class="footer__heading">Gửi email tới chúng tôi</h2>
+    <p class="footer__description">Nhận giảm giá 10% với <br>email của bạn</p>
+    <form action="" class="footer__form">
+      <i class="fa-solid fa-envelope footer__form-icon"></i>
+      <input type="email" class="footer__input" placeholder="Nhập email của bạn vào đây">
+      <i class="fa-solid fa-arrow-right footer__form-icon"></i>
     </form>
   </div>
 </div>
+
 
 <!-- copyright -->
 
 <div class="copyright" id="copyright">
   <p>Bản quyền @ Nguyễn Quang Minh (Zalo: 0325508778) không sao chép dưới mọi hình thức</p>
 </div>
-    <script src="header.js"></script>
-    <script src="style.js"></script>
-    <script src="app.js"></script>
-    <script src="scroll.js"></script>
+
+
+<!-- Overlay -->
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<!-- Modal Đặt Hàng -->
+<div class="order-modal" id="order-modal">
+  <h2>Đặt đồ uống</h2>
+  <img src="" alt="Product" class="order-img" id="order-img">
+  <p id="order-name">Tên sản phẩm</p>
+  <p><strong>Giá gốc:</strong> $<span id="base-price">0.00</span></p>
+  <p><strong>Tổng tiền:</strong> $<span id="total-price">0.00</span></p>
+
+  <form id="order-form">
+    <div class="form-group">
+      <label>Chọn size:</label>
+      <select name="size" id="size-select" required>
+        <option value="">-- Chọn --</option>
+        <option value="S" data-plus="0">Size S</option>
+        <option value="M" data-plus="1">Size M (+$1)</option>
+        <option value="L" data-plus="2">Size L (+$2)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Chọn kiểu:</label>
+      <select name="ice" required>
+        <option value="">-- Chọn --</option>
+        <option value="Đá">Đá</option>
+        <option value="Nóng">Nóng</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Topping:</label>
+      <div class="toppings">
+        <label><input type="checkbox" name="topping" value="0.5"> Trân châu</label>
+        <label><input type="checkbox" name="topping" value="0.5"> Kem</label>
+        <label><input type="checkbox" name="topping" value="0.5"> Caramel</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Số lượng:</label>
+      <input type="number" name="quantity" id="qty" min="1" value="1" required>
+    </div>
+
+    <div class="form-group">
+      <label>Ghi chú:</label>
+      <textarea name="note" rows="2" placeholder="Thêm ghi chú (nếu có)"></textarea>
+    </div>
+
+    <button type="submit">Tiếp tục thanh toán</button>
+    <button type="button" id="close-order">Hủy</button>
+  </form>
+</div>
+
+<!-- Modal Thanh Toán -->
+<div class="checkout-modal" id="checkout-modal">
+  <h2>Thanh toán</h2>
+  <form id="checkout-form">
+    <div class="form-group">
+      <label>Email nhận hóa đơn:</label>
+      <input type="email" name="email" placeholder="Nhập email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Chọn phương thức thanh toán:</label>
+      <select name="method" required>
+        <option value="">-- Chọn --</option>
+        <option value="Momo">Ví Momo</option>
+        <option value="Bank">Chuyển khoản ngân hàng</option>
+        <option value="Card">Thẻ Visa/Master</option>
+      </select>
+    </div>
+
+    <div id="payment-info"></div>
+
+    <button type="submit">Thanh toán</button>
+    <button type="button" id="close-checkout">Hủy</button>
+  </form>
+</div>
+
+    <script src="/js/header.js"></script>
+    <script src="/js/style.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/scroll.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- ✅ Sử dụng EmailJS SDK v3 UMD -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="/js/modal.js"></script>
+
+
+     <script>
+  AOS.init({
+    duration: 1200,
+    once: false, // Cho phép hiệu ứng chạy lại khi cuộn lên
+    offset: 100, // Khoảng cách bắt đầu trigger animation
+  });
+    </script>
   </body>
 </html>

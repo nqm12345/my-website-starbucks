@@ -1,0 +1,100 @@
+.app {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+/* Heading */
+.app__heading {
+  text-align: center;
+  margin: 50px 0 30px 0;
+}
+
+.app__title {
+  color: #017143;
+}
+
+.app__label {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Layout */
+.app__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  gap: 1.5rem;
+  margin-top: 30px;
+}
+
+/* Image */
+.app__image-box {
+  flex: 1 1 21rem;
+}
+
+.app__image {
+  width: 100%;
+}
+
+/* Text content */
+.app__content {
+  flex: 1 1 21rem;
+}
+
+.app__subtitle {
+  font-size: 1.2rem;
+  color: #868a92;
+}
+
+.app__text {
+  margin: 0.5rem 0 1rem;
+  text-align: justify;
+}
+
+/* Button */
+.app__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #00754a;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.app__btn:hover {
+  background-color: #005f3c;
+  transform: translateY(-2px);
+}
+
+.app__btn i {
+  font-size: 16px;
+}
+
+
+.btn_starbucks {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #017143, #03a97c);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn_starbucks:hover {
+  background: linear-gradient(135deg, #025f36, #04c28d);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}

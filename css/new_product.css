@@ -6,14 +6,17 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
-.carousel .list {
+
+.carousel__list {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 1;
 }
-.carousel .list .item {
+
+.carousel__item {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,7 +24,8 @@
   height: 100%;
   z-index: 1;
 }
-.carousel .list .item::before {
+
+.carousel__item::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -36,23 +40,25 @@
   color: #eee4;
   z-index: -1;
 }
-.carousel .list .item .image {
+
+.carousel__image {
   flex-shrink: 0;
   width: 300px;
   height: 525px;
   --left: -200px;
-  background: var(--img-src) var(--left) 0, url(images/soda.png) no-repeat;
+  background: var(--img-src) var(--left) 0, url(/images/soda.png) no-repeat;
   background-size: 100% auto;
   background-blend-mode: multiply;
-  -webkit-mask-image: url(images/soda.png);
+  -webkit-mask-image: url(/images/soda.png);
   -webkit-mask-size: 100% auto;
   -webkit-mask-repeat: no-repeat;
-  mask-image: url(images/soda.png);
+  mask-image: url(/images/soda.png);
   mask-size: 100% auto;
   mask-repeat: no-repeat;
   transition: background 1s ease-in-out;
 }
-.carousel .list .item .content {
+
+.carousel__content {
   width: 1140px;
   max-width: 90%;
   margin: auto;
@@ -64,37 +70,47 @@
   justify-content: space-between;
   align-items: center;
 }
-.carousel .list .item .info .title {
+
+.carousel__info .carousel__title {
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1em;
 }
-.carousel .list .item .info .category {
+
+.carousel__info .carousel__category {
   opacity: 0.7;
 }
-.carousel .list .item .info .des {
+
+.carousel__info .carousel__description {
   margin: 1em 0;
 }
-.carousel .list .item .info a {
+
+.carousel__link {
   display: inline-flex;
   gap: 20px;
   text-decoration: none;
   color: #eee;
   font-weight: 500;
 }
-/* set active item */
-.carousel .list .item {
+
+.carousel__link .carousel__icon {
+  font-size: 1.2em;
+}
+
+/* Set active item */
+.carousel__item {
   z-index: 1;
 }
-.carousel .list .item.active {
+.carousel__item--active {
   z-index: 2;
 }
-.carousel .list .item.active .image {
+.carousel__item--active .carousel__image {
   --left: 0;
 }
-/* arrows */
-.arrows button {
+
+/* Arrows */
+.carousel__arrow {
   position: absolute;
   top: 50%;
   z-index: 2;
@@ -111,25 +127,31 @@
   left: 10%;
   transition: background 0.5s, color 0.5s;
 }
-.arrows button#next {
+
+.carousel__arrow#next {
   left: unset;
   right: 10%;
 }
-.arrows button:hover {
+
+.carousel__arrow:hover {
   background-color: #eee;
   color: #000;
 }
-.dots li {
+
+/* Dots */
+.carousel__dot {
   width: 15px;
   height: 15px;
   background-color: #eee5;
   border-radius: 50%;
   cursor: pointer;
 }
-.dots li.active {
+
+.carousel__dot--active {
   background-color: #eee;
 }
-.dots {
+
+.carousel__dots {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -143,15 +165,14 @@
   transform: translateX(-50%);
   transition: background 0.5s;
 }
-.carousel {
-  overflow: hidden;
-}
+
 /* responsive */
 @media screen and (max-width: 767px) {
   .carousel {
     height: 100vh;
   }
-  .carousel .list .item .info {
+
+  .carousel__item .carousel__info {
     position: absolute;
     bottom: 10%;
     width: 100%;
@@ -160,18 +181,22 @@
     text-align: center;
     backdrop-filter: blur(20px);
   }
-  .carousel .list .item .info .title {
+
+  .carousel__item .carousel__title {
     font-size: 2em;
   }
-  .carousel .list .item .info .des {
+
+  .carousel__item .carousel__description {
     font-size: 0.8em;
     text-align: justify;
   }
-  .carousel .list .item .content {
+
+  .carousel__content {
     justify-content: center;
     align-items: start;
   }
-  .arrows button {
+
+  .carousel__arrow {
     top: unset;
     bottom: 20px;
   }
@@ -187,42 +212,47 @@
   }
 }
 
-.carousel.effect .item .image {
-  animation: transformAnimation 1s ease-in-out 1 forwards;
-}
-.carousel.effect .item .info .title,
-.carousel.effect .item .info .category,
-.carousel.effect .item .info .des,
-.carousel.effect .item .info a {
-  animation: transformAnimation 1s ease-in-out 1 forwards;
-}
-.carousel.effect .item .info .category {
-  animation-delay: 0.1s;
-}
-.carousel.effect .item .info .des {
-  animation-delay: 0.2s;
-}
-.carousel.effect .item .info a {
-  animation-delay: 0.3s;
-}
-.carousel.effect .item.active {
-  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-  animation: animationClipPath 0.9s ease-in-out 1 forwards;
-}
 @keyframes animationClipPath {
   to {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
-.carousel.effect {
+.carousel--effect {
   --transform: 300px;
 }
-.carousel.effect .item.active {
-  --transform-from: calc(var(--transform) * -1);
-  --transform-to: 0px;
-}
-.carousel.effect .item {
+
+.carousel--effect .carousel__item {
   --transform-from: 0;
   --transform-to: var(--transform);
+}
+
+.carousel--effect .carousel__item--active {
+  --transform-from: calc(var(--transform) * -1);
+  --transform-to: 0px;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  animation: animationClipPath 0.9s ease-in-out 1 forwards;
+}
+
+.carousel--effect .carousel__item--active .carousel__image {
+  animation: transformAnimation 1s ease-in-out 1 forwards;
+}
+
+.carousel--effect .carousel__item--active .carousel__title,
+.carousel--effect .carousel__item--active .carousel__category,
+.carousel--effect .carousel__item--active .carousel__description,
+.carousel--effect .carousel__item--active .carousel__link {
+  animation: transformAnimation 1s ease-in-out 1 forwards;
+}
+
+.carousel--effect .carousel__item--active .carousel__category {
+  animation-delay: 0.1s;
+}
+
+.carousel--effect .carousel__item--active .carousel__description {
+  animation-delay: 0.2s;
+}
+
+.carousel--effect .carousel__item--active .carousel__link {
+  animation-delay: 0.3s;
 }

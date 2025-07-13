@@ -1,0 +1,81 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none;
+}
+
+.order-modal,
+.checkout-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  scroll-behavior: smooth;
+}
+
+.order-modal img {
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+}
+
+.order-modal h2,
+.checkout-modal h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 2px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.toppings label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.order-modal button,
+.checkout-modal button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background-color: #00804b;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.order-modal button#close-order,
+.checkout-modal button#close-checkout {
+  background-color: #ccc;
+  margin-top: 10px;
+  color: #000;
+}

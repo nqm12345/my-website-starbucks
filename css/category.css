@@ -1,4 +1,11 @@
-.heading {
+.categories {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.categories__heading {
   width: 986px;
   display: flex;
   justify-content: space-between;
@@ -8,7 +15,17 @@
   margin-right: auto;
 }
 
-.btn_starbucks {
+.categories__title {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.categories__brand {
+  color: #017143;
+  font-weight: 800;
+}
+
+.categories__btn {
   display: inline-block;
   margin-top: 20px;
   padding: 8px 20px;
@@ -20,66 +37,50 @@
   text-decoration: none;
 }
 
-.heading h1 {
-  font-size: 1.8em;
-  font-weight: 600;
-}
-
-.heading span {
-  color: #017143;
-  font-weight: 800;
-}
-
-.categories {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-
-  padding: 10px;
-}
-
-.categories_container {
+.categories__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, auto));
   gap: 1em;
   margin-top: 2em;
 }
 
-.categories_container .box {
+.categories__item {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   border-radius: 0.5em;
+  background: #f4f4f4; /* mặc định nếu không có modifier */
 }
 
-.categories_container .box img {
+.categories__item--1 {
+  background: #017143;
+}
+
+.categories__item--2 {
+  background: #eb7495;
+}
+
+.categories__item--3 {
+  background: #d752b1;
+}
+
+.categories__img {
   width: 100%;
   height: 100px;
   object-fit: contain;
   object-position: center;
 }
 
-.categories_container .box h2 {
+.categories__name {
   font-size: 1.2em;
   font-weight: 600;
+  margin-top: 10px;
 }
 
-.categories_container .box span {
+.categories__count {
   font-size: 0.8em;
   font-weight: 400;
   margin-bottom: 1em;
-}
-
-.box1 {
-  background: #017143;
-}
-
-.box2 {
-  background: #eb7495;
-}
-
-.box3 {
-  background: #d752b1;
 }

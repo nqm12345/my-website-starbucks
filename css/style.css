@@ -32,8 +32,7 @@ body {
   background-color: #025d36;
 }
 
-
-section {
+.home {
   position: relative;
   width: 100%;
   padding: 100px;
@@ -41,10 +40,20 @@ section {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
-#main-header {
+
+.home__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #017143;
+  clip-path: circle(600px at right 800px);
+}
+
+.header {
   position: absolute;
   top: 0;
   right: 0;
@@ -59,28 +68,24 @@ section {
   transition: all 0.3s ease;
 }
 
-#main-header.fixed {
+.header.fixed {
   position: fixed;
 }
 
-header .logo {
-  position: relative;
+.header__logo {
   max-width: 40px;
-  top: 0;
-  left: 0;
 }
 
-header ul {
-  position: relative;
+.header__nav {
   display: flex;
 }
 
-header ul li {
+.header__nav-item {
   list-style: none;
   margin-left: 20px;
 }
 
-header ul li a {
+.header__nav-link {
   display: inline-block;
   color: #333;
   font-weight: 400;
@@ -89,24 +94,25 @@ header ul li a {
   border-radius: 0.5rem;
 }
 
-header ul li a:hover {
+.header__nav-link:hover {
   background: #017143;
   transition: 0.3s linear;
   color: #fff;
 }
-.menu-toggle {
-  display: none; /* Mặc định ẩn trên desktop */
+
+.header__menu-toggle {
+  display: none;
   font-size: 2em;
   color: #017143;
   cursor: pointer;
   z-index: 1001;
 }
 
-.menu-toggle.hide {
-  display: none !important; /* ẩn cứng */
+.header__menu-toggle.hide {
+  display: none !important;
 }
 
-.close-toggle {
+.header__close-toggle {
   display: none;
   font-size: 2em;
   color: #017143;
@@ -114,37 +120,34 @@ header ul li a:hover {
   margin-bottom: 30px;
 }
 
-.content {
-  position: relative;
+.home__content {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.content .textBox {
-  position: relative;
+.home__text-box {
   max-width: 600px;
 }
 
-.content .textBox h2 {
+.home__heading {
   color: #333;
   font-size: 4em;
   line-height: 1.4em;
-  font: 500;
 }
 
-.content .textBox h2 span {
+.home__brand {
   color: #017143;
   font-size: 1.2em;
   font-weight: 900;
 }
 
-.content .textBox p {
+.home__description {
   color: #333;
 }
 
-.content .textBox a {
+.home__btn {
   display: inline-block;
   margin-top: 20px;
   padding: 8px 20px;
@@ -155,19 +158,21 @@ header ul li a:hover {
   letter-spacing: 1px;
   text-decoration: none;
 }
-.content .imgBox {
+
+.home__img-box {
   width: 600px;
   display: flex;
   justify-content: flex-end;
   padding-right: 50px;
   margin-top: 50px;
+  position: relative;
 }
 
-.content .imgBox img {
+.home__img {
   max-width: 340px;
 }
 
-.thumb {
+.home__thumbs {
   position: absolute;
   left: 50%;
   bottom: 50px;
@@ -175,81 +180,69 @@ header ul li a:hover {
   display: flex;
 }
 
-.thumb li {
+.home__thumb {
   list-style: none;
-  display: inline-block;
   margin: 0 20px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.thumb li:hover {
+.home__thumb:hover {
   transform: translateY(-15px);
 }
 
-.thumb li img {
+.home__thumb img {
   max-width: 60px;
 }
 
-.sci {
+.home__socials {
   position: absolute;
   top: 50%;
   right: 30px;
   transform: translateY(-50%);
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
-.sci li {
+.home__socials li {
   list-style: none;
 }
 
-.sci li a {
+.home__socials a {
   display: inline-block;
   margin: 5px 0;
   transform: scale(0.6);
   filter: invert(1);
 }
 
-.circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #017143;
-  clip-path: circle(600px at right 800px);
-}
-
 @media (max-width: 1215px) {
-  .content .imgBox img {
+  .home__img-box img {
     max-width: 280px;
   }
-  .circle {
+  .home__circle {
     clip-path: circle(500px at right 700px);
   }
 }
 
 @media (max-width: 1122px) {
-  .thumb {
+  .home__thumbs {
     top: 85%;
   }
 }
 
 @media (max-width: 1080px) {
-  .menu-toggle {
+  .header__menu-toggle {
     display: block;
     position: absolute;
     right: 20px;
   }
 
-  .close-toggle {
+  .header__close-toggle {
     display: block;
   }
 
-  header ul.nav {
+  .header__nav {
     position: fixed;
     top: 0;
     right: -100%;
@@ -265,112 +258,112 @@ header ul li a:hover {
     z-index: 1000;
   }
 
-  header ul.nav.active {
+  .header__nav.active {
     right: 0;
   }
 }
 
 @media (max-width: 1060px) {
+  /* Trống - bạn có thể thêm sau nếu cần */
 }
 
 @media (max-width: 1024px) {
-  header {
+  .header {
     padding: 20px 50px;
   }
 
-  .content .imgBox {
+  .home__img-box {
     width: 400px;
     padding-right: 0;
   }
 
-  .content .imgBox img {
+  .home__img-box img {
     max-width: 280px;
   }
 
-  .content .textBox h2 {
+  .home__heading {
     font-size: 3em;
   }
 }
 
 @media (max-width: 866px) {
-  .thumb {
+  .home__thumbs {
     top: 86%;
   }
 }
 
 @media (max-width: 768px) {
-  section {
+  .home {
     flex-direction: column;
     padding: 100px 20px;
   }
 
-  .content {
+  .home__content {
     flex-direction: column;
     align-items: center;
   }
 
-  .content .textBox {
+  .home__text-box {
     text-align: center;
     max-width: 100%;
   }
 
-  .content .imgBox {
+  .home__img-box {
     justify-content: center;
     margin-top: 30px;
     width: 100%;
   }
 
-  .thumb {
+  .home__thumbs {
     top: 90%;
     flex-wrap: wrap;
   }
 
-  .sci {
+  .home__socials {
     top: unset;
     bottom: 30px;
     right: 20px;
   }
 
-  .sci li a {
+  .home__socials li a {
     margin: 0 5px;
   }
 
-  .circle {
+  .home__circle {
     clip-path: circle(400px at center bottom);
   }
 }
 
 @media (max-width: 615px) {
-  .content .imgBox img {
+  .home__img-box img {
     max-width: 200px;
   }
 
-  .thumb {
+  .home__thumbs {
     top: 62%;
     left: 10%;
     max-width: 50px;
   }
 }
 
-.thumb li:hover {
+.home__thumb:hover {
   transform: translateY(-15px);
 }
 
 @media (max-width: 480px) {
-  .content .textBox h2 {
+  .home__heading {
     font-size: 2em;
   }
 
-  .content .imgBox img {
+  .home__img-box img {
     max-width: 200px;
   }
 
-  .thumb li img {
+  .home__thumb img {
     max-width: 45px;
   }
 
-  .circle {
+  .home__circle {
     clip-path: circle(300px at center bottom);
   }
 }
-

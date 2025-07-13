@@ -1,0 +1,127 @@
+.footer {
+  position: relative;
+  max-width: 968px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+  gap: 1.5em;
+  background: #fef4ea;
+  border-radius: 0.5em;
+  padding: 20px;
+}
+
+.footer__logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.footer__logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer__logo-text {
+  font-size: 20px;
+  position: absolute;
+  top: 26px;
+  left: 70px;
+  font-weight: 600;
+  color: #017143;
+}
+
+.footer__box {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__address,
+.footer__description {
+  font-size: 0.938em;
+  margin: 0.5em 0 1em;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+.footer__social-link .fa-facebook,
+.footer__social-link .fa-instagram,
+.footer__social-link .fa-youtube {
+  padding: 10px;
+  background: #fff;
+  color: #24cc3a;
+  border-radius: 5em;
+  font-size: 20px;
+  transition: 0.2s all linear;
+}
+
+.footer__social-link:hover .fa-facebook,
+.footer__social-link:hover .fa-instagram,
+.footer__social-link:hover .fa-youtube {
+  background: #24cc3a;
+  color: #fff;
+}
+
+.footer__heading {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.footer__link {
+  color: #868a92;
+  margin-bottom: 1em;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer__link:hover {
+  color: #eb8f33;
+}
+
+.footer__form {
+  border-bottom: 1px solid #868a92;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+.footer__input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #868a92;
+  flex: 1;
+}
+
+.footer__form-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer__form-icon.fa-envelope {
+  color: #24cc3a;
+}
+
+.footer__form-icon.fa-arrow-right {
+  color: #eb8f33;
+}
+
+.footer__copyright {
+  text-align: center;
+  padding: 20px;
+  color: #868a92;
+}
+
+#copyright {
+  text-align: center;       /* Căn giữa nội dung */
+  margin-top: 30px;         /* Tạo khoảng cách phía trên */
+  padding: 10px 0;          /* (Tuỳ chọn) Tạo khoảng cách bên trong */
+  font-size: 14px;          /* (Tuỳ chọn) Cỡ chữ dễ đọc */
+  color: #555;              /* (Tuỳ chọn) Màu chữ */
+}
+
